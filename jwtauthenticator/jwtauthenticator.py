@@ -14,7 +14,7 @@ class JSONWebTokenLoginHandler(BaseHandler):
         header_is_authorization = self.authenticator.header_is_authorization
 
         auth_header_content = self.request.headers.get(header_name, "")
-        auth_cookie_content = self.get_cookie("XSRF-TOKEN", "")
+        auth_cookie_content = self.get_cookie("auth", "")
         signing_certificate = self.authenticator.signing_certificate
         secret = self.authenticator.secret
         username_claim_field = self.authenticator.username_claim_field
